@@ -1,0 +1,322 @@
+_build/MyXML.cmo : \
+    _build/io.cmo
+_build/MyXML.cmx : \
+    _build/io.cmx
+_build/abbrev.cmo : \
+    _build/util.cmo \
+    _build/io.cmo
+_build/abbrev.cmx : \
+    _build/util.cmx \
+    _build/io.cmx
+_build/dp.cmo : \
+    _build/util.cmo \
+    _build/trs.cmo \
+    _build/term.cmo \
+    _build/sym.cmo \
+    _build/params.cmo \
+    _build/io.cmo \
+    _build/estimator.cmo \
+    _build/abbrev.cmo
+_build/dp.cmx : \
+    _build/util.cmx \
+    _build/trs.cmx \
+    _build/term.cmx \
+    _build/sym.cmx \
+    _build/params.cmx \
+    _build/io.cmx \
+    _build/estimator.cmx \
+    _build/abbrev.cmx
+_build/estimator.cmo : \
+    _build/util.cmo \
+    _build/trs.cmo \
+    _build/term.cmo \
+    _build/sym.cmo \
+    _build/subst.cmo \
+    _build/params.cmo \
+    _build/io.cmo
+_build/estimator.cmx : \
+    _build/util.cmx \
+    _build/trs.cmx \
+    _build/term.cmx \
+    _build/sym.cmx \
+    _build/subst.cmx \
+    _build/params.cmx \
+    _build/io.cmx
+_build/freezing.cmo : \
+    _build/util.cmo \
+    _build/trs.cmo \
+    _build/term.cmo \
+    _build/sym.cmo \
+    _build/params.cmo \
+    _build/dp.cmo
+_build/freezing.cmx : \
+    _build/util.cmx \
+    _build/trs.cmx \
+    _build/term.cmx \
+    _build/sym.cmx \
+    _build/params.cmx \
+    _build/dp.cmx
+_build/io.cmo :
+_build/io.cmx :
+_build/main.cmo : \
+    _build/wpo.cmo \
+    _build/util.cmo \
+    _build/txtr.cmo \
+    _build/trs.cmo \
+    _build/term.cmo \
+    _build/sym.cmo \
+    _build/strategy.cmo \
+    _build/smt.cmo \
+    _build/proc.cmo \
+    _build/params.cmo \
+    _build/nonterm.cmo \
+    _build/myXML.cmo \
+    _build/io.cmo \
+    _build/freezing.cmo \
+    _build/estimator.cmo \
+    _build/dp.cmo \
+    _build/abbrev.cmo
+_build/main.cmx : \
+    _build/wpo.cmx \
+    _build/util.cmx \
+    _build/txtr.cmx \
+    _build/trs.cmx \
+    _build/term.cmx \
+    _build/sym.cmx \
+    _build/strategy.cmx \
+    _build/smt.cmx \
+    _build/proc.cmx \
+    _build/params.cmx \
+    _build/nonterm.cmx \
+    _build/myXML.cmx \
+    _build/io.cmx \
+    _build/freezing.cmx \
+    _build/estimator.cmx \
+    _build/dp.cmx \
+    _build/abbrev.cmx
+_build/matrix.cmo : \
+    _build/util.cmo
+_build/matrix.cmx : \
+    _build/util.cmx
+_build/mset.cmo :
+_build/mset.cmx :
+_build/myXML.cmo : \
+    _build/io.cmo
+_build/myXML.cmx : \
+    _build/io.cmx
+_build/nonterm.cmo : \
+    _build/util.cmo \
+    _build/trs.cmo \
+    _build/term.cmo \
+    _build/subst.cmo \
+    _build/params.cmo \
+    _build/io.cmo \
+    _build/estimator.cmo \
+    _build/dp.cmo
+_build/nonterm.cmx : \
+    _build/util.cmx \
+    _build/trs.cmx \
+    _build/term.cmx \
+    _build/subst.cmx \
+    _build/params.cmx \
+    _build/io.cmx \
+    _build/estimator.cmx \
+    _build/dp.cmx
+_build/params.cmo : \
+    _build/util.cmo \
+    _build/txtr.cmo \
+    _build/term.cmo \
+    _build/sym.cmo \
+    _build/strategy.cmo \
+    _build/smt.cmo \
+    _build/io.cmo
+_build/params.cmx : \
+    _build/util.cmx \
+    _build/txtr.cmx \
+    _build/term.cmx \
+    _build/sym.cmx \
+    _build/strategy.cmx \
+    _build/smt.cmx \
+    _build/io.cmx
+_build/preorder.cmo : \
+    _build/util.cmo \
+    _build/smt.cmo \
+    _build/io.cmo
+_build/preorder.cmx : \
+    _build/util.cmx \
+    _build/smt.cmx \
+    _build/io.cmx
+_build/proc.cmo : \
+    _build/util.cmo \
+    _build/io.cmo
+_build/proc.cmx : \
+    _build/util.cmx \
+    _build/io.cmx
+_build/smt.cmo : \
+    _build/util.cmo \
+    _build/txtr.cmo \
+    _build/proc.cmo \
+    _build/io.cmo
+_build/smt.cmx : \
+    _build/util.cmx \
+    _build/txtr.cmx \
+    _build/proc.cmx \
+    _build/io.cmx
+_build/strategy.cmo : \
+    _build/util.cmo \
+    _build/txtr.cmo \
+    _build/smt.cmo \
+    _build/io.cmo
+_build/strategy.cmx : \
+    _build/util.cmx \
+    _build/txtr.cmx \
+    _build/smt.cmx \
+    _build/io.cmx
+_build/subst.cmo : \
+    _build/term.cmo \
+    _build/sym.cmo \
+    _build/io.cmo
+_build/subst.cmx : \
+    _build/term.cmx \
+    _build/sym.cmx \
+    _build/io.cmx
+_build/sym.cmo : \
+    _build/util.cmo \
+    _build/myXML.cmo \
+    _build/io.cmo
+_build/sym.cmx : \
+    _build/util.cmx \
+    _build/myXML.cmx \
+    _build/io.cmx
+_build/term.cmo : \
+    _build/util.cmo \
+    _build/sym.cmo \
+    _build/myXML.cmo \
+    _build/io.cmo
+_build/term.cmx : \
+    _build/util.cmx \
+    _build/sym.cmx \
+    _build/myXML.cmx \
+    _build/io.cmx
+_build/trs.cmo : \
+    _build/util.cmo \
+    _build/txtr.cmo \
+    _build/term.cmo \
+    _build/sym.cmo \
+    _build/subst.cmo \
+    _build/params.cmo \
+    _build/myXML.cmo \
+    _build/mset.cmo \
+    _build/io.cmo
+_build/trs.cmx : \
+    _build/util.cmx \
+    _build/txtr.cmx \
+    _build/term.cmx \
+    _build/sym.cmx \
+    _build/subst.cmx \
+    _build/params.cmx \
+    _build/myXML.cmx \
+    _build/mset.cmx \
+    _build/io.cmx
+_build/txtr.cmo : \
+    _build/util.cmo \
+    _build/io.cmo
+_build/txtr.cmx : \
+    _build/util.cmx \
+    _build/io.cmx
+_build/util.cmo : \
+    _build/io.cmo
+_build/util.cmx : \
+    _build/io.cmx
+_build/weight.cmo : \
+    _build/util.cmo \
+    _build/trs.cmo \
+    _build/term.cmo \
+    _build/sym.cmo \
+    _build/strategy.cmo \
+    _build/smt.cmo \
+    _build/preorder.cmo \
+    _build/params.cmo \
+    _build/mset.cmo \
+    _build/io.cmo \
+    _build/dp.cmo
+_build/weight.cmx : \
+    _build/util.cmx \
+    _build/trs.cmx \
+    _build/term.cmx \
+    _build/sym.cmx \
+    _build/strategy.cmx \
+    _build/smt.cmx \
+    _build/preorder.cmx \
+    _build/params.cmx \
+    _build/mset.cmx \
+    _build/io.cmx \
+    _build/dp.cmx
+_build/wpo.cmo : \
+    _build/wpo_printer.cmo \
+    _build/wpo_info.cmo \
+    _build/weight.cmo \
+    _build/util.cmo \
+    _build/trs.cmo \
+    _build/term.cmo \
+    _build/sym.cmo \
+    _build/strategy.cmo \
+    _build/smt.cmo \
+    _build/preorder.cmo \
+    _build/params.cmo \
+    _build/myXML.cmo \
+    _build/io.cmo \
+    _build/estimator.cmo \
+    _build/dp.cmo \
+    _build/abbrev.cmo
+_build/wpo.cmx : \
+    _build/wpo_printer.cmx \
+    _build/wpo_info.cmx \
+    _build/weight.cmx \
+    _build/util.cmx \
+    _build/trs.cmx \
+    _build/term.cmx \
+    _build/sym.cmx \
+    _build/strategy.cmx \
+    _build/smt.cmx \
+    _build/preorder.cmx \
+    _build/params.cmx \
+    _build/myXML.cmx \
+    _build/io.cmx \
+    _build/estimator.cmx \
+    _build/dp.cmx \
+    _build/abbrev.cmx
+_build/wpo_info.cmo : \
+    _build/util.cmo \
+    _build/trs.cmo \
+    _build/strategy.cmo \
+    _build/smt.cmo
+_build/wpo_info.cmx : \
+    _build/util.cmx \
+    _build/trs.cmx \
+    _build/strategy.cmx \
+    _build/smt.cmx
+_build/wpo_printer.cmo : \
+    _build/wpo_info.cmo \
+    _build/weight.cmo \
+    _build/util.cmo \
+    _build/trs.cmo \
+    _build/term.cmo \
+    _build/sym.cmo \
+    _build/strategy.cmo \
+    _build/smt.cmo \
+    _build/myXML.cmo \
+    _build/io.cmo \
+    _build/abbrev.cmo
+_build/wpo_printer.cmx : \
+    _build/wpo_info.cmx \
+    _build/weight.cmx \
+    _build/util.cmx \
+    _build/trs.cmx \
+    _build/term.cmx \
+    _build/sym.cmx \
+    _build/strategy.cmx \
+    _build/smt.cmx \
+    _build/myXML.cmx \
+    _build/io.cmx \
+    _build/abbrev.cmx

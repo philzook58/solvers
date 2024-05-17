@@ -1,0 +1,203 @@
+#!@swipl_PATH@
+
+/*
+
+Copyright © 2023-24 Sean Holden. All rights reserved.
+
+*/
+/*
+
+This file is part of Connect++.
+
+Connect++ is free software: you can redistribute it and/or modify it 
+under the terms of the GNU General Public License as published by the 
+Free Software Foundation, either version 3 of the License, or (at your 
+option) any later version.
+
+Connect++ is distributed in the hope that it will be useful, but WITHOUT 
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or 
+FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for 
+more details.
+
+You should have received a copy of the GNU General Public License along 
+with Connect++. If not, see <https://www.gnu.org/licenses/>. 
+
+*/
+
+/*
+* Check a proof, given the matrix and proof stack files output
+* by Connect++.
+*
+* The simplest way to use this is to put the files matrix.pl 
+* and proof.pl in the same directory as this file and do 
+* ./check_proof.
+*
+* Details...
+*
+* ./check_proof 
+*
+* Pick up matrix.pl and proof.pl from the current directory. 
+* Check the proof silently. 
+*
+* ./check_proof v
+*
+* Same as above, but explain the verification.
+*
+* ./check_proof matrix_file proof_file
+*
+* Specify the two files to use, rather than rely on on the 
+* default.
+*
+* ./check_proof matrix_file proof_file v
+*
+* Same as aobve, but explain the verification.
+*
+* In all cases exit successfully if the proof is 
+* good and unsuccessfully otherwise.
+*
+* You really want to use SWI Prolog for this as it uses 
+* system-specific features.
+*/
+
+/*
+* Suppress the numerous warnings generated because of the way in which 
+* the matrix is represented.
+*/
+:- style_check(-singleton).
+/*
+* Specify that the main predicate is the place to start.
+*/
+:- initialization(main, main).
+/*
+* Make sure output only happens if the v option was supplied.
+*/
+vwrite(_) :- verbose(no), !.
+vwrite(Text) :- write(Text).
+/*
+* Deletion works in a specific way within the C++ for connect++.
+* You need to do it this way to preserve ordering correctly.
+*/
+remove_nth0(N, List, Item, Result)
+  :- last(List, L),
+      nth0(N, List, Item, R1),
+      nth0(N, R2, L, R1),
+      append(Result, [L], R2).
+/*
+* Elements are added at the end of paths etc, so make make look-up
+* in Prolog lists easy.
+*/
+reverse_nth0(N, List, Result)
+  :- reverse(List, RevList),
+     nth0(N, RevList, Result).
+/*
+* Construct the negation of a literal.
+*/
+negate_lit(Lit, NegLit)
+  :- (Lit = -NegLit, !
+    ;
+    NegLit = -Lit).
+/*
+* Split the proof into left branch and right branch using the current depth.
+*/
+split_proof(_, [], [], []).
+split_proof(Depth, [right_branch(Depth) | Proof], [], Proof) :- !.
+split_proof(Depth, [P | Proof], [P | Left], Right)
+  :- split_proof(Depth, Proof, Left, Right).
+/*
+* Main verification. First, deal with axioms.
+*/
+verify([], _, _, []) :- vwrite("\nAxiom"), vwrite("\n----------"), !.
+/*
+* Reductions.
+*/
+verify(Clause, Path, Lemmata, 
+       [ reduction(IndexInClause, IndexInPath) | Proof ] )
+  :- vwrite("\nReduction: "),
+     nth0(IndexInClause, Clause, Lit),
+     negate_lit(Lit, NegLit),
+     reverse_nth0(IndexInPath, Path, NegLit2),
+     vwrite("\nLit resolved in clause: "), vwrite(NegLit),
+     vwrite("\nLit resolved in path:   "), vwrite(NegLit2),
+     unify_with_occurs_check(NegLit, NegLit2),
+     vwrite("\nUnification OK."),
+     remove_nth0(IndexInClause, Clause, _, Clause2),
+     vwrite("\nC = "), vwrite(Clause2),
+     vwrite("\nP = "), vwrite(Path),
+     vwrite("\nL = "), vwrite([Lit | Lemmata]), vwrite("\n----------"),
+     verify(Clause2, Path, [Lit | Lemmata], Proof).
+/*
+* Lemmata.
+*/
+verify(Clause, Path, Lemmata, 
+       [ lemmata(IndexInClause, IndexInLemmata) | Proof ] )
+  :- vwrite("\nLemmata: "),
+     nth0(IndexInClause, Clause, Lit),
+     reverse_nth0(IndexInLemmata, Lemmata, Lit2),
+     vwrite("\nLit in clause:  "), vwrite(Lit),
+     vwrite("\nLit in lemmata: "), vwrite(Lit2),
+     Lit==Lit2,
+     vwrite("\nComparison OK."),
+     remove_nth0(IndexInClause, Clause, _, Clause2),
+     vwrite("\nC = "), vwrite(Clause2),
+     vwrite("\nP = "), vwrite(Path),
+     vwrite("\nL = "), vwrite(Lemmata), vwrite("\n----------"),
+     verify(Clause2, Path, Lemmata, Proof).
+/*
+* Left branches for extensions.
+*/
+verify(Clause, Path, Lemmata, 
+       [ left_branch(IndexInClause, ClauseIndex, LitIndex, Depth) | Proof ] )
+  :- vwrite("\nLeft extension: depth = "), vwrite(Depth),
+     nth0(IndexInClause, Clause, Lit),
+     negate_lit(Lit, NegLit),
+     matrix(ClauseIndex, C),
+     duplicate_term(C, C2),
+     remove_nth0(LitIndex, C2, Lit2, NewClause),
+     vwrite("\nLit in clause:  "), vwrite(Lit),
+     vwrite("\nC2 = "), vwrite(C2),
+     vwrite("\nL2 = "), vwrite(Lit2),
+     unify_with_occurs_check(NegLit, Lit2),
+     vwrite("\nUnification OK."),
+     split_proof(Depth, Proof, Left, Right),
+     vwrite("\nC = "), vwrite(NewClause),
+     vwrite("\nP = "), vwrite([Lit | Path]),
+     vwrite("\nL = "), vwrite(Lemmata), vwrite("\n----------"),
+     verify(NewClause, [Lit | Path], Lemmata, Left),
+     vwrite("\nRight extension: depth = "), vwrite(Depth),
+     remove_nth0(IndexInClause, Clause, _, Clause2),
+     vwrite("\nC = "), vwrite(Clause2),
+     vwrite("\nP = "), vwrite(Path),
+     vwrite("\nL = "), vwrite([Lit | Lemmata]), vwrite("\n----------"),
+     verify(Clause2, Path, [Lit | Lemmata], Right).
+/*
+* Identify the start step at the beginning of the proof and set the
+* ball rolling.
+*/
+verify
+  :- proof_stack( [ start( StartClauseNum ) | Proof ] ),
+     matrix(StartClauseNum, StartClause),
+     duplicate_term(StartClause, C),
+     vwrite("Start Clause: "), vwrite(C), vwrite("\n----------"),
+     verify(C, [], [], Proof), !, write("Verified\n"), halt(0).
+verify 
+  :- write("Not Verified\n"), halt(1).
+/*
+* The first line of matrix.pl needs to be :- style_check(-singleton) 
+* so that warnings don't get printed.
+*/
+main([])
+    :-  asserta(verbose(no)), 
+        consult(["matrix.pl","proof.pl"]), 
+        verify.
+main([v])    
+    :-  asserta(verbose(yes)), 
+        consult(["matrix.pl","proof.pl"]), 
+        verify.
+main([M,P]) 
+    :-  asserta(verbose(no)), 
+        consult([M,P]), 
+        verify.
+main([M,P,v])    
+    :-  asserta(verbose(yes)), 
+        consult([M,P]), 
+        verify.

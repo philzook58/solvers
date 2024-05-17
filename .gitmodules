@@ -1,0 +1,54 @@
+[submodule "vampire"]
+	path = vampire
+	url = https://github.com/vprover/vampire.git
+[submodule "timbuk"]
+	path = timbuk
+	url = https://gitlab.inria.fr/regular-pv/timbuk/timbuk.git
+[submodule "souffle"]
+	path = souffle
+	url = https://github.com/souffle-lang/souffle.git
+[submodule "pyvampire"]
+	path = pyvampire
+	url = git@github.com:philzook58/pyvampire.git
+[submodule "pyeprover"]
+	path = pyeprover
+	url = git@github.com:philzook58/pyeprover.git
+[submodule "KoAT2-Releases"]
+	path = KoAT2-Releases
+	url = https://github.com/aprove-developers/KoAT2-Releases.git
+[submodule "caqe"]
+	path = caqe
+	url = https://github.com/ltentrup/caqe.git
+[submodule "eprover"]
+	path = eprover
+	url = https://github.com/eprover/eprover.git
+[submodule "cop-rs"]
+	path = cop-rs
+	url = https://github.com/01mf02/cop-rs.git
+[submodule "libvata"]
+	path = libvata
+	url = https://github.com/ondrik/libvata.git
+[submodule "Leo-III"]
+	path = Leo-III
+	url = https://github.com/leoprover/Leo-III.git
+[submodule "cbmc"]
+	path = cbmc
+	url = https://github.com/diffblue/cbmc.git
+[submodule "cadical"]
+	path = cadical
+	url = https://github.com/arminbiere/cadical.git
+[submodule "bitwuzla"]
+	path = bitwuzla
+	url = https://github.com/bitwuzla/bitwuzla.git
+[submodule "boolector"]
+	path = boolector
+	url = https://github.com/Boolector/boolector.git
+[submodule "connections"]
+	path = connections
+	url = https://github.com/fredrrom/connections.git
+[submodule "esbmc"]
+	path = esbmc
+	url = https://github.com/esbmc/esbmc.git
+[submodule "Prover9"]
+	path = Prover9
+	url = https://github.com/ai4reason/Prover9.git

@@ -1,0 +1,85 @@
+(* Interface intentionally removed for efficiency. But to test that modules do not access the ftm type, you can enable it *)
+type ftm;;
+
+val mk_db : int -> ftm;;
+val mk_name : int -> ftm;;
+val mk_norm_ap : ftm -> ftm -> ftm;;
+val mk_norm_lam : int -> ftm -> ftm;;
+(* The unique copy *)
+val mk_false : ftm;;
+
+val mk_norm_imp : ftm -> ftm -> ftm;;
+val mk_all : int -> ftm -> ftm;;
+val mk_choice : int -> ftm;;
+val mk_norm_eq : int -> ftm -> ftm -> ftm;;
+
+(* These 4 do not beta-eta-false-normalize. Use only is sure.
+   Otherwise they are stored in caches and will cause problems! *)
+val mk_unsafe_ap : ftm -> ftm -> ftm;;
+val mk_unsafe_lam : int -> ftm -> ftm;;
+val mk_unsafe_imp : ftm -> ftm -> ftm;;
+val mk_unsafe_eq : int -> ftm -> ftm -> ftm;;
+
+(* Explicit requests for substitutions *)
+val uptrm : ftm -> int -> int -> ftm;;
+val subst : ftm -> int -> ftm -> ftm;;
+
+type ftm_tag =
+| FT_None
+| FT_DB
+| FT_Name
+| FT_Ap
+| FT_Lam
+| FT_False
+| FT_Imp
+| FT_All
+| FT_Choice
+| FT_Eq;;
+val get_tag : ftm -> ftm_tag;;
+
+(* get_no lets you get the number of the type or of the name stored under the tag *)
+val get_no : ftm -> int;;
+val get_l : ftm -> ftm;;
+val get_r : ftm -> ftm;;
+val get_head : ftm -> ftm;;
+val get_head_spine : ftm -> (ftm * ftm list);;
+
+val get_isneg : ftm -> bool;;
+val get_nonnegated : ftm -> ftm;;
+
+val get_maxv : ftm -> int;;
+val get_fv0 : ftm -> int -> bool;;
+val get_fv0_0 : ftm -> bool;;
+
+val set_incomplete : bool -> unit;;
+
+val print : ftm -> unit;;
+val size : ftm -> int;;
+val unique_subterm_bottom_up_iter : (ftm -> unit) -> ftm -> unit;;
+val unique_size : ftm -> int;;
+
+val unique_subterm_bottom_up_replace : (ftm -> ftm) -> ftm -> ftm;;
+
+val processed_make : int -> unit;;
+val processed_add : ftm -> unit;;
+val processed_mem : ftm -> bool;;
+val processed_clear : unit -> unit;;
+
+(*
+val clausetable_make : int -> unit;;
+val clausetable_add_wasthere : int -> int list -> bool;;
+val clausetable_clear : unit -> unit;;
+*)
+
+(*
+val hashtbli1_find : hashtbli1 -> ftm -> int
+val hashtbli2_find : hashtbli2 -> ftm -> ftm -> int;;
+
+
+
+
+type vectori
+val vectori_make : int -> vectori;;
+val vectori_add : vectori -> int -> ftm -> unit;;
+val vectori_find : vectori -> int -> ftm;;
+*)

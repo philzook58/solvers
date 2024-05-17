@@ -1,0 +1,4 @@
+#!/bin/bash
+echo let lashdir = \"`pwd`\" > src/config.ml
+echo let modedir = ref \(lashdir ^ \"/../modes\"\) >> src/config.ml
+echo let picomus = ref \(lashdir ^ \"/picosat-936/picomus\"\) >> src/config.ml

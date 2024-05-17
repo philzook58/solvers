@@ -1,0 +1,13 @@
+aprove.jar
+vampire_release/
+leo3-v1.7.jar
+*/build/
+*/_build/
+*/bin/
+*.cmo
+*.cmi
+*.cmx
+*.cma
+*.a
+*.o
+

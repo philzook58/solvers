@@ -1,0 +1,523 @@
+bin/atom.cmo : \
+    bin/term.cmi \
+    bin/ftm.cmo \
+    bin/atom.cmi
+bin/atom.cmx : \
+    bin/term.cmx \
+    bin/ftm.cmx \
+    bin/atom.cmi
+bin/atom.cmi : \
+    bin/syntax.cmo
+bin/config.cmo :
+bin/config.cmx :
+bin/coqparser/coqlexer.cmo : \
+    bin/coqparser/coqparser.cmo
+bin/coqparser/coqlexer.cmx : \
+    bin/coqparser/coqparser.cmx
+bin/coqparser/coqparser.cmo : \
+    bin/syntax.cmo \
+    bin/state.cmi \
+    bin/log.cmi \
+    bin/error.cmi
+bin/coqparser/coqparser.cmx : \
+    bin/syntax.cmx \
+    bin/state.cmx \
+    bin/log.cmx \
+    bin/error.cmx
+bin/error.cmo : \
+    bin/error.cmi
+bin/error.cmx : \
+    bin/error.cmi
+bin/error.cmi :
+bin/extra/FileE.cmo :
+bin/extra/FileE.cmx :
+bin/extra/ListE.cmo :
+bin/extra/ListE.cmx :
+bin/extra/OptionE.cmo :
+bin/extra/OptionE.cmx :
+bin/extra/StringE.cmo :
+bin/extra/StringE.cmx :
+bin/flags.cmo : \
+    bin/flags.cmi
+bin/flags.cmx : \
+    bin/flags.cmi
+bin/flags.cmi :
+bin/ftm.cmo :
+bin/ftm.cmx :
+bin/lash.cmo : \
+    bin/lashmain.cmi
+bin/lash.cmx : \
+    bin/lashmain.cmx
+bin/lashmain.cmo : \
+    bin/version.cmi \
+    bin/parser/tptp_parser.cmo \
+    bin/parser/tptp_lexer.cmo \
+    bin/termP.cmi \
+    bin/syntax.cmo \
+    bin/extra/StringE.cmo \
+    bin/state.cmi \
+    bin/sine.cmi \
+    bin/searchoption.cmi \
+    bin/search.cmi \
+    bin/refut.cmi \
+    bin/pfterm/proofterm.cmi \
+    bin/extra/OptionE.cmo \
+    bin/ontology.cmi \
+    bin/log.cmi \
+    bin/extra/ListE.cmo \
+    bin/flags.cmi \
+    bin/pfterm/flag.cmi \
+    bin/extra/FileE.cmo \
+    bin/error.cmi \
+    bin/coqparser/coqparser.cmo \
+    bin/coqparser/coqlexer.cmo \
+    bin/config.cmo \
+    bin/lashmain.cmi
+bin/lashmain.cmx : \
+    bin/version.cmx \
+    bin/parser/tptp_parser.cmx \
+    bin/parser/tptp_lexer.cmx \
+    bin/termP.cmx \
+    bin/syntax.cmx \
+    bin/extra/StringE.cmx \
+    bin/state.cmx \
+    bin/sine.cmx \
+    bin/searchoption.cmx \
+    bin/search.cmx \
+    bin/refut.cmx \
+    bin/pfterm/proofterm.cmx \
+    bin/extra/OptionE.cmx \
+    bin/ontology.cmx \
+    bin/log.cmx \
+    bin/extra/ListE.cmx \
+    bin/flags.cmx \
+    bin/pfterm/flag.cmx \
+    bin/extra/FileE.cmx \
+    bin/error.cmx \
+    bin/coqparser/coqparser.cmx \
+    bin/coqparser/coqlexer.cmx \
+    bin/config.cmx \
+    bin/lashmain.cmi
+bin/lashmain.cmi :
+bin/log.cmo : \
+    bin/log.cmi
+bin/log.cmx : \
+    bin/log.cmi
+bin/log.cmi :
+bin/minisat.cmo : \
+    bin/refut.cmi \
+    bin/minisatinterface.cmo \
+    bin/log.cmi \
+    bin/minisat.cmi
+bin/minisat.cmx : \
+    bin/refut.cmx \
+    bin/minisatinterface.cmx \
+    bin/log.cmx \
+    bin/minisat.cmi
+bin/minisat.cmi :
+bin/minisatinterface.cmo :
+bin/minisatinterface.cmx :
+bin/ontology.cmo : \
+    bin/term.cmi \
+    bin/log.cmi \
+    bin/flags.cmi \
+    bin/ontology.cmi
+bin/ontology.cmx : \
+    bin/term.cmx \
+    bin/log.cmx \
+    bin/flags.cmx \
+    bin/ontology.cmi
+bin/ontology.cmi : \
+    bin/term.cmi
+bin/parser/formula.cmo : \
+    bin/parser/formula.cmi
+bin/parser/formula.cmx : \
+    bin/parser/formula.cmi
+bin/parser/formula.cmi :
+bin/parser/tptp_config.cmo : \
+    bin/syntax.cmo \
+    bin/state.cmi \
+    bin/log.cmi \
+    bin/parser/formula.cmi \
+    bin/parser/tptp_config.cmi
+bin/parser/tptp_config.cmx : \
+    bin/syntax.cmx \
+    bin/state.cmx \
+    bin/log.cmx \
+    bin/parser/formula.cmx \
+    bin/parser/tptp_config.cmi
+bin/parser/tptp_config.cmi : \
+    bin/parser/formula.cmi
+bin/parser/tptp_lexer.cmo : \
+    bin/parser/tptp_parser.cmo
+bin/parser/tptp_lexer.cmx : \
+    bin/parser/tptp_parser.cmx
+bin/parser/tptp_parser.cmo : \
+    bin/parser/tptp_config.cmi \
+    bin/parser/formula.cmi
+bin/parser/tptp_parser.cmx : \
+    bin/parser/tptp_config.cmx \
+    bin/parser/formula.cmx
+bin/pfterm/branch.cmo : \
+    bin/syntax.cmo \
+    bin/state.cmi \
+    bin/pfterm/refutation.cmi \
+    bin/pfterm/flag.cmi \
+    bin/atom.cmi \
+    bin/pfterm/branch.cmi
+bin/pfterm/branch.cmx : \
+    bin/syntax.cmx \
+    bin/state.cmx \
+    bin/pfterm/refutation.cmx \
+    bin/pfterm/flag.cmx \
+    bin/atom.cmx \
+    bin/pfterm/branch.cmi
+bin/pfterm/branch.cmi : \
+    bin/state.cmi \
+    bin/pfterm/refutation.cmi
+bin/pfterm/coq.cmo : \
+    bin/termP.cmi \
+    bin/syntax.cmo \
+    bin/state.cmi \
+    bin/pfterm/refutation.cmi \
+    bin/refut.cmi \
+    bin/pfterm/flag.cmi \
+    bin/atom.cmi \
+    bin/pfterm/coq.cmi
+bin/pfterm/coq.cmx : \
+    bin/termP.cmx \
+    bin/syntax.cmx \
+    bin/state.cmx \
+    bin/pfterm/refutation.cmx \
+    bin/refut.cmx \
+    bin/pfterm/flag.cmx \
+    bin/atom.cmx \
+    bin/pfterm/coq.cmi
+bin/pfterm/coq.cmi : \
+    bin/termP.cmi \
+    bin/term.cmi \
+    bin/pfterm/refutation.cmi \
+    bin/refut.cmi
+bin/pfterm/flag.cmo : \
+    bin/pfterm/flag.cmi
+bin/pfterm/flag.cmx : \
+    bin/pfterm/flag.cmi
+bin/pfterm/flag.cmi :
+bin/pfterm/latex.cmo : \
+    bin/syntax.cmo \
+    bin/state.cmi \
+    bin/pfterm/refutation.cmi \
+    bin/pfterm/latex.cmi
+bin/pfterm/latex.cmx : \
+    bin/syntax.cmx \
+    bin/state.cmx \
+    bin/pfterm/refutation.cmx \
+    bin/pfterm/latex.cmi
+bin/pfterm/latex.cmi : \
+    bin/syntax.cmo \
+    bin/pfterm/refutation.cmi
+bin/pfterm/litcount.cmo : \
+    bin/pfterm/flag.cmi \
+    bin/pfterm/litcount.cmi
+bin/pfterm/litcount.cmx : \
+    bin/pfterm/flag.cmx \
+    bin/pfterm/litcount.cmi
+bin/pfterm/litcount.cmi :
+bin/pfterm/norm.cmo : \
+    bin/pfterm/norm.cmi
+bin/pfterm/norm.cmx : \
+    bin/pfterm/norm.cmi
+bin/pfterm/norm.cmi : \
+    bin/syntax.cmo
+bin/pfterm/proofterm.cmo : \
+    bin/pfterm/translation.cmi \
+    bin/syntax.cmo \
+    bin/pfterm/suche.cmi \
+    bin/state.cmi \
+    bin/search.cmi \
+    bin/pfterm/refutation.cmi \
+    bin/refut.cmi \
+    bin/pfterm/norm.cmi \
+    bin/log.cmi \
+    bin/pfterm/latex.cmi \
+    bin/flags.cmi \
+    bin/pfterm/flag.cmi \
+    bin/error.cmi \
+    bin/pfterm/coq.cmi \
+    bin/pfterm/branch.cmi \
+    bin/atom.cmi \
+    bin/pfterm/proofterm.cmi
+bin/pfterm/proofterm.cmx : \
+    bin/pfterm/translation.cmx \
+    bin/syntax.cmx \
+    bin/pfterm/suche.cmx \
+    bin/state.cmx \
+    bin/search.cmx \
+    bin/pfterm/refutation.cmx \
+    bin/refut.cmx \
+    bin/pfterm/norm.cmx \
+    bin/log.cmx \
+    bin/pfterm/latex.cmx \
+    bin/flags.cmx \
+    bin/pfterm/flag.cmx \
+    bin/error.cmx \
+    bin/pfterm/coq.cmx \
+    bin/pfterm/branch.cmx \
+    bin/atom.cmx \
+    bin/pfterm/proofterm.cmi
+bin/pfterm/proofterm.cmi : \
+    bin/syntax.cmo \
+    bin/refut.cmi
+bin/pfterm/refutation.cmo : \
+    bin/syntax.cmo \
+    bin/pfterm/refutation.cmi
+bin/pfterm/refutation.cmx : \
+    bin/syntax.cmx \
+    bin/pfterm/refutation.cmi
+bin/pfterm/refutation.cmi : \
+    bin/syntax.cmo
+bin/pfterm/step.cmo : \
+    bin/syntax.cmo \
+    bin/state.cmi \
+    bin/refut.cmi \
+    bin/pfterm/litcount.cmi \
+    bin/pfterm/flag.cmi \
+    bin/pfterm/branch.cmi \
+    bin/atom.cmi \
+    bin/pfterm/step.cmi
+bin/pfterm/step.cmx : \
+    bin/syntax.cmx \
+    bin/state.cmx \
+    bin/refut.cmx \
+    bin/pfterm/litcount.cmx \
+    bin/pfterm/flag.cmx \
+    bin/pfterm/branch.cmx \
+    bin/atom.cmx \
+    bin/pfterm/step.cmi
+bin/pfterm/step.cmi : \
+    bin/syntax.cmo \
+    bin/refut.cmi \
+    bin/pfterm/litcount.cmi \
+    bin/pfterm/branch.cmi
+bin/pfterm/suche.cmo : \
+    bin/syntax.cmo \
+    bin/pfterm/step.cmi \
+    bin/state.cmi \
+    bin/pfterm/refutation.cmi \
+    bin/refut.cmi \
+    bin/pfterm/litcount.cmi \
+    bin/flags.cmi \
+    bin/pfterm/flag.cmi \
+    bin/pfterm/branch.cmi \
+    bin/atom.cmi \
+    bin/pfterm/suche.cmi
+bin/pfterm/suche.cmx : \
+    bin/syntax.cmx \
+    bin/pfterm/step.cmx \
+    bin/state.cmx \
+    bin/pfterm/refutation.cmx \
+    bin/refut.cmx \
+    bin/pfterm/litcount.cmx \
+    bin/flags.cmx \
+    bin/pfterm/flag.cmx \
+    bin/pfterm/branch.cmx \
+    bin/atom.cmx \
+    bin/pfterm/suche.cmi
+bin/pfterm/suche.cmi : \
+    bin/pfterm/refutation.cmi \
+    bin/refut.cmi \
+    bin/pfterm/branch.cmi
+bin/pfterm/translation.cmo : \
+    bin/syntax.cmo \
+    bin/state.cmi \
+    bin/pfterm/refutation.cmi \
+    bin/pfterm/norm.cmi \
+    bin/pfterm/flag.cmi \
+    bin/error.cmi \
+    bin/pfterm/translation.cmi
+bin/pfterm/translation.cmx : \
+    bin/syntax.cmx \
+    bin/state.cmx \
+    bin/pfterm/refutation.cmx \
+    bin/pfterm/norm.cmx \
+    bin/pfterm/flag.cmx \
+    bin/error.cmx \
+    bin/pfterm/translation.cmi
+bin/pfterm/translation.cmi : \
+    bin/syntax.cmo \
+    bin/pfterm/refutation.cmi
+bin/preterm.cmo : \
+    bin/preterm.cmi
+bin/preterm.cmx : \
+    bin/preterm.cmi
+bin/preterm.cmi :
+bin/refut.cmo : \
+    bin/term.cmi \
+    bin/ftm.cmo \
+    bin/atom.cmi \
+    bin/refut.cmi
+bin/refut.cmx : \
+    bin/term.cmx \
+    bin/ftm.cmx \
+    bin/atom.cmx \
+    bin/refut.cmi
+bin/refut.cmi : \
+    bin/term.cmi \
+    bin/ftm.cmo \
+    bin/atom.cmi
+bin/search.cmo : \
+    bin/vector.cmi \
+    bin/syntax.cmo \
+    bin/state.cmi \
+    bin/searchoption.cmi \
+    bin/refut.cmi \
+    bin/minisatinterface.cmo \
+    bin/minisat.cmi \
+    bin/log.cmi \
+    bin/ftm.cmo \
+    bin/flags.cmi \
+    bin/error.cmi \
+    bin/atom.cmi \
+    bin/search.cmi
+bin/search.cmx : \
+    bin/vector.cmx \
+    bin/syntax.cmx \
+    bin/state.cmx \
+    bin/searchoption.cmx \
+    bin/refut.cmx \
+    bin/minisatinterface.cmx \
+    bin/minisat.cmx \
+    bin/log.cmx \
+    bin/ftm.cmx \
+    bin/flags.cmx \
+    bin/error.cmx \
+    bin/atom.cmx \
+    bin/search.cmi
+bin/search.cmi : \
+    bin/syntax.cmo \
+    bin/state.cmi \
+    bin/refut.cmi \
+    bin/flags.cmi
+bin/searchoption.cmo : \
+    bin/vector.cmi \
+    bin/term.cmi \
+    bin/syntax.cmo \
+    bin/log.cmi \
+    bin/ftm.cmo \
+    bin/flags.cmi \
+    bin/error.cmi \
+    bin/searchoption.cmi
+bin/searchoption.cmx : \
+    bin/vector.cmx \
+    bin/term.cmx \
+    bin/syntax.cmx \
+    bin/log.cmx \
+    bin/ftm.cmx \
+    bin/flags.cmx \
+    bin/error.cmx \
+    bin/searchoption.cmi
+bin/searchoption.cmi : \
+    bin/syntax.cmo
+bin/sine.cmo : \
+    bin/term.cmi \
+    bin/state.cmi \
+    bin/log.cmi \
+    bin/flags.cmi \
+    bin/sine.cmi
+bin/sine.cmx : \
+    bin/term.cmx \
+    bin/state.cmx \
+    bin/log.cmx \
+    bin/flags.cmx \
+    bin/sine.cmi
+bin/sine.cmi : \
+    bin/state.cmi
+bin/state.cmo : \
+    bin/vector.cmi \
+    bin/unsatcore.cmi \
+    bin/termP.cmi \
+    bin/syntax.cmo \
+    bin/searchoption.cmi \
+    bin/refut.cmi \
+    bin/ontology.cmi \
+    bin/minisat.cmi \
+    bin/log.cmi \
+    bin/ftm.cmo \
+    bin/flags.cmi \
+    bin/error.cmi \
+    bin/state.cmi
+bin/state.cmx : \
+    bin/vector.cmx \
+    bin/unsatcore.cmx \
+    bin/termP.cmx \
+    bin/syntax.cmx \
+    bin/searchoption.cmx \
+    bin/refut.cmx \
+    bin/ontology.cmx \
+    bin/minisat.cmx \
+    bin/log.cmx \
+    bin/ftm.cmx \
+    bin/flags.cmx \
+    bin/error.cmx \
+    bin/state.cmi
+bin/state.cmi : \
+    bin/vector.cmi \
+    bin/syntax.cmo \
+    bin/refut.cmi \
+    bin/config.cmo
+bin/syntax.cmo : \
+    bin/term.cmi \
+    bin/preterm.cmi \
+    bin/ftm.cmo
+bin/syntax.cmx : \
+    bin/term.cmx \
+    bin/preterm.cmx \
+    bin/ftm.cmx
+bin/term.cmo : \
+    bin/vector.cmi \
+    bin/extra/StringE.cmo \
+    bin/preterm.cmi \
+    bin/ftm.cmo \
+    bin/term.cmi
+bin/term.cmx : \
+    bin/vector.cmx \
+    bin/extra/StringE.cmx \
+    bin/preterm.cmx \
+    bin/ftm.cmx \
+    bin/term.cmi
+bin/term.cmi : \
+    bin/vector.cmi \
+    bin/preterm.cmi \
+    bin/ftm.cmo
+bin/termP.cmo : \
+    bin/term.cmi \
+    bin/termP.cmi
+bin/termP.cmx : \
+    bin/term.cmx \
+    bin/termP.cmi
+bin/termP.cmi : \
+    bin/term.cmi
+bin/unsatcore.cmo : \
+    bin/log.cmi \
+    bin/error.cmi \
+    bin/config.cmo \
+    bin/atom.cmi \
+    bin/unsatcore.cmi
+bin/unsatcore.cmx : \
+    bin/log.cmx \
+    bin/error.cmx \
+    bin/config.cmx \
+    bin/atom.cmx \
+    bin/unsatcore.cmi
+bin/unsatcore.cmi : \
+    bin/refut.cmi
+bin/vector.cmo : \
+    bin/vector.cmi
+bin/vector.cmx : \
+    bin/vector.cmi
+bin/vector.cmi :
+bin/version.cmo : \
+    bin/version.cmi
+bin/version.cmx : \
+    bin/version.cmi
+bin/version.cmi :
