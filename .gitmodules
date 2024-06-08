@@ -12,7 +12,7 @@
 	url = git@github.com:philzook58/pyvampire.git
 [submodule "pyeprover"]
 	path = pyeprover
-	url = git@github.com:philzook58/pyeprover.git
+	url = https://github.com/philzook58/pyeprover.git
 [submodule "KoAT2-Releases"]
 	path = KoAT2-Releases
 	url = https://github.com/aprove-developers/KoAT2-Releases.git
