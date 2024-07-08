@@ -67,3 +67,6 @@
 [submodule "ocaml-alg"]
 	path = ocaml-alg
 	url = https://github.com/smimram/ocaml-alg.git
+[submodule "prologsolvers"]
+	path = prologsolvers
+	url = git@github.com:philzook58/prologsolvers.git
