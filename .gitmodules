@@ -52,3 +52,18 @@
 [submodule "Prover9"]
 	path = Prover9
 	url = https://github.com/ai4reason/Prover9.git
+[submodule "daisy"]
+	path = daisy
+	url = https://github.com/malyzajko/daisy.git
+[submodule "FPTaylor"]
+	path = FPTaylor
+	url = https://github.com/soarlab/FPTaylor.git
+[submodule "gappa"]
+	path = gappa
+	url = https://gitlab.inria.fr/gappa/gappa.git
+[submodule "archsat"]
+	path = archsat
+	url = https://github.com/Gbury/archsat.git
+[submodule "ocaml-alg"]
+	path = ocaml-alg
+	url = https://github.com/smimram/ocaml-alg.git
