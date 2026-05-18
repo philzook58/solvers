@@ -1,0 +1,9 @@
+(VAR x y z)
+(RULES
+a(e,x) -> x
+a(i(x),x) -> e
+f(a(x,y)) -> a(f(x),f(y))
+g(a(x,y)) -> a(g(x),g(y))
+a(f(x),g(y)) -> a(g(y),f(x))
+a(x,a(y,z)) -> a(a(x,y),z)
+)

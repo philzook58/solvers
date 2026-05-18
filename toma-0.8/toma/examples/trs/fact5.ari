@@ -1,0 +1,16 @@
+(format TRS)
+
+(fun add 2)
+(fun mul 2)
+(fun fact 1)
+(fun s 1)
+(fun 0 0)
+(fun main 0)
+
+(rule (add 0 y) y)
+(rule (add (s x) y) (s (add x y)))
+(rule (mul 0 y) 0)
+(rule (mul (s x) y) (add (mul x y) y))
+(rule (fact 0) (s 0))
+(rule (fact (s x)) (mul (s x) (fact x)))
+(rule main (fact (s (s (s (s (s 0)))))))

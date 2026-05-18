@@ -1,0 +1,69 @@
+----------------------------------------------------
+  Moca 0.3
+-----------------------------------------------------
+
+Moca is a first-order theorem prover.
+
+-----------------------------------------------------
+  PREREQUISITE
+-----------------------------------------------------
+
+We assume that the followings have been installed.
+
+  Z3 >= 4.6.0: https://github.com/Z3Prover/z3
+  ghc >= 8.0.2
+  stack >= 1.6.5
+
+------------------------------------------------------
+  HOW TO COMPILE
+------------------------------------------------------
+
+The executable file "moca" can be produced by executing
+
+  $ stack install
+
+in this directory.
+
+------------------------------------------------------
+  HOW TO RUN
+------------------------------------------------------
+
+  $ ./moca.sh <file> <options>
+
+For instance,
+
+  $ ./moca.sh problem.trs
+
+See also the help message:
+
+  $ ./moca.sh --help
+
+Note:
+  The shell file "moca.sh" creates tempfiles, execute moca with 59s timeout, and remove the tempfiles.
+  If you directly execute "moca", tempfiles may remain undeleted.
+
+------------------------------------------------------
+  OPTIONS
+------------------------------------------------------
+
+  --siav  use the split-if encoding using all variables in s = t => u = v
+  --smsi  skip execution for parameters with the multi-split-if encoding mode
+  -nap    execute without approximations by projection
+  -nag    execute without approximations by generalization
+  --cert  generate a certificate for CPF3 (cannot be combined with other options)
+  --help  Display list of options
+
+Examples
+- execute using the Claessen-Smallbone's split-if encoding:
+  $ ./moca.sh problem.trs --siav --smsi 
+- execute using an improved split-if encoding but not using the multi-split-if encoding:
+  $ ./moca.sh problem.trs --smsi
+- execute using no approximation:
+  $ ./moca.sh problem.trs -nap -nag 
+- execute using only the approximation by generalization:
+  $ ./moca.sh problem.trs -nap 
+- execute using only the approximation by projection:
+  $ ./moca.sh problem.trs -nag 
+- generate a certificate in CPF3:
+  $ ./moca.sh --cert problem.trs > proof.xml
+  $ ceta proof.xml 

@@ -6,4 +6,5 @@ Copies and links of automated reasoning solvers. All rights retained by original
 - https://aprove.informatik.rwth-aachen.de/
 - NaTT  https://www.trs.cm.is.nagoya-u.ac.jp/NaTT/
 - https://www.cl.cam.ac.uk/~sbh11/connect++.html
+- https://www.jaist.ac.jp/project/maxcomp/ maxcomp moca toma
 

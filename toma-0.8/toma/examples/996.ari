@@ -1,0 +1,11 @@
+; @author Florian Messner
+; @doi 10.1007/978-3-030-17462-0_15
+; @cops 1142
+; [155] Example 12
+(format CTRS oriented :problem infeasibility)
+(fun a 0)
+(fun b 0)
+(fun f 1)
+(rule a a (= (f a) a))
+(rule (f x) a (= x b))
+(infeasible? (= (f a) a))

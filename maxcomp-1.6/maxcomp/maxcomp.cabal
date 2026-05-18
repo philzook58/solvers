@@ -1,0 +1,33 @@
+name:          maxcomp
+version:       0.0.0.0
+build-type:    Simple
+cabal-version: >=1.10
+
+executable maxcomp
+  main-is:          Main.hs
+  build-depends:    base, parsec, process, directory, containers
+  other-modules:
+    Completion
+    ELPO
+    EncodingELPOEKBO
+    EncodingLinear
+    LPO
+    Parser
+    Rule
+    TRS
+    EKBO
+    ELPOEKBO
+    EncodingLPOKBO
+    KBO
+    Linear
+    Order
+    Rewriting
+    SMT
+    Term
+    Precedence
+    Lex
+    SPO
+    EncodingSPO
+    EncodingLinear2
+  default-language: GHC2021
+  ghc-options:      -Wall

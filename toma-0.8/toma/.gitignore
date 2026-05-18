@@ -1,0 +1,9 @@
+*.o
+*.hi
+toma
+toma-static
+z3
+dist-newstyle/
+.stack-work/
+*.zip
+*.tgz

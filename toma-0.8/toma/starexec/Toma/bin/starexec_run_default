@@ -1,0 +1,8 @@
+#!/bin/bash
+
+PATH=.:$PATH
+if timeout 60s ./toma -o lpo --order-selection mincp -q $1; then
+    exit 0
+else
+    ./toma -o kbo --order-selection default -q $1
+fi

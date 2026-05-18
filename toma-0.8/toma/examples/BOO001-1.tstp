@@ -1,0 +1,13 @@
+% SZS status Unsatisfiable
+% SZS output start CNFRefutation
+cnf(g0, negated_conjecture, inverse(inverse(a)) != a, file('BOO001-1.p', prove_inverse_is_self_cancelling)).
+cnf(c1, axiom, multiply(X, Y, Y) = Y, file('BOO001-1.p', ternary_multiply_1)).
+cnf(c4, axiom, multiply(X, Y, inverse(Y)) = X, file('BOO001-1.p', right_inverse)).
+cnf(c5, axiom, multiply(multiply(X, Y, Z), W, multiply(X, Y, V)) = multiply(X, Y, multiply(Z, W, V)), file('BOO001-1.p', associativity)).
+cnf(c7, plain, multiply(X, Y, multiply(Z, X, W)) = multiply(Z, X, multiply(X, Y, W)), inference(equational, [status(thm)], [c1,c5])).
+cnf(c8, plain, multiply(X, Y, multiply(Z, X, Y)) = multiply(Z, X, Y), inference(equational, [status(thm)], [c1,c7])).
+cnf(c9, plain, multiply(X, inverse(X), Y) = Y, inference(equational, [status(thm)], [c4,c8])).
+cnf(c10, plain, inverse(inverse(X)) = X, inference(equational, [status(thm)], [c4,c9])).
+cnf(g1, plain, inverse(inverse(a)) = a, inference(equational, [status(thm)], [c10])).
+cnf(g2, plain, $false, inference(resolution, [status(thm)], [g0, g1])).
+% SZS output end CNFRefutation

@@ -1,0 +1,11 @@
+# CoCo 2024 submission
+
+Note that starexec_description.txt must not contain hyphen (-).
+
+$ cd Moca
+$ zip -r Moca.zip *
+
+## sample-problems
+
+$ cd sample-problems
+$ zip -r sample-problems.zip *

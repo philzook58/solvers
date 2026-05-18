@@ -1,0 +1,8 @@
+#!/bin/bash
+
+PATH=.:$PATH
+tempI=`mktemp _tempmoca_XXXXXXXX.smt2`
+tempO=`mktemp _tempmoca_XXXXXXXX.txt`
+./moca $1 -tmpi=`basename $tempI` -tmpo=`basename $tempO`
+rm -f `basename $tempI`
+rm -f `basename $tempO`

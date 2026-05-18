@@ -1,0 +1,13 @@
+name: moca
+version: "0.3"
+
+executables:
+  moca:
+    source-dirs: .
+    main: Main.hs
+    dependencies:
+      - base
+      - parsec
+      - process
+      - directory
+      - xml

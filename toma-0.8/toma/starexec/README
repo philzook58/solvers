@@ -1,0 +1,11 @@
+* StarExec Packaging
+Note that starexec_description.txt must not contain hyphen (-).
+
+For Toma itself, move statically linked binaries of Toma and Z3 to bin/
+and then:
+$ cd Toma
+$ zip -r Toma0.x.zip *
+
+For sample problems:
+$ cd sample-problems
+$ zip -r sample-problems.zip *

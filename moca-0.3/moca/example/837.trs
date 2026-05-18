@@ -1,0 +1,17 @@
+(PROBLEM INFEASIBILITY)
+(COMMENT COPS 310)
+(CONDITIONTYPE ORIENTED)
+(VAR x y)
+(RULES
+ gcd(add(x, y), y) -> gcd(x, y)
+  gcd(y, add(x, y)) -> gcd(x, y)
+  gcd(x, 0) -> x
+  gcd(0, x) -> x
+  gcd(x, y) -> gcd(y, x) | leq(y, x) == false
+  add(0, y) -> y
+  add(s(x), y) -> s(add(x, y))
+)
+(VAR x1)
+(CONDITION leq(0,x1) == false)
+(COMMENT submitted by: Naoki Nishida
+)

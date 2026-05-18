@@ -1,0 +1,23 @@
+A simplified version of Twee's discount loop.
+No ground-joinability criterion (e.g., Marin and Nipkow or connectedness) is used.
+
+A: axioms
+R: active set (both oriented and unoriented. critical pairs among R are already considered)
+Q: passive set (axioms and unprocessed critical pairs)
+
+(R, Q) = (∅, A)
+while Q ≠ ∅
+  P = remove lowest-scoring element of Q
+  continue to the next loop if any of P's parent rules is not present in R
+  normalize P using R to get t = u
+  continue to the next loop if t = u is trivial or a variant of a rule in R 
+  orient t = u if possible, and add it to R
+  for all critical pairs cp between t = u and R
+    normalize cp using only the oriented rules of R
+    add cp to Q if cp is non-trivial
+  end
+  normalize goal using R
+  return "theorem" if goal is trivial
+  simplify rules in R w.r.t each other but limit this step to 5% of total runtime (how?)
+end
+return "countersatisfiable"

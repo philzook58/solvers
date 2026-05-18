@@ -1,0 +1,29 @@
+WHAT IS THIS
+
+Maxcomp is a completion tool for first-order equational systems.
+
+PREREQUISITES
+
+ * GNU Make
+ * Glasgow Haskell Compiler 8.10.4 -- https://www.haskell.org/ghc/
+ * Z3 version 4.8.11               -- https://github.com/Z3Prover/z3
+
+If you use Debian or Ubuntu, they can be installed by the following commands:
+
+  sudo apt-get install make ghc z3
+
+HOW TO COMPILE
+
+  make
+
+produces the completion tool "maxcomp".
+
+HOW TO RUN
+
+For instance,
+
+  ./maxcomp group.trs
+
+See also the help message:
+
+  ./maxcomp -h

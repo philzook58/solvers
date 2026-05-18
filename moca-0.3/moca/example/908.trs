@@ -1,0 +1,16 @@
+(PROBLEM INFEASIBILITY)
+(COMMENT COPS 552)
+(CONDITIONTYPE ORIENTED)
+(VAR x y xs)
+(RULES
+ le(x,0) -> false
+  le(0,s(y)) -> true
+  le(s(x),s(y)) -> le(x, y)
+  min(cons(x,nil)) -> x
+  min(cons(x,xs)) -> x | le(x,min(xs)) == true
+  min(cons(x,xs)) -> min(xs) | le(x,min(xs)) == false
+)
+(VAR x2 x1)
+(CONDITION le(x1,min(x2)) == true, le(x1,min(x2)) == false)
+(COMMENT submitted by: Naoki Nishida
+)

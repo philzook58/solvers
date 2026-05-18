@@ -1,0 +1,27 @@
+(PROBLEM INFEASIBILITY)
+(COMMENT COPS 278)
+(CONDITIONTYPE ORIENTED)
+(VAR x n h t m pid store)
+(RULES
+ fstsplit(0, x) -> nil
+  fstsplit(s(n), nil) -> nil
+  fstsplit(s(n), cons(h, t)) -> cons(h, fstsplit(n, t))
+  sndsplit(0, x) -> x
+  sndsplit(s(n), nil) -> nil
+  sndsplit(s(n), cons(h, t)) -> sndsplit(n, t)
+  empty(nil) -> true
+  empty(cons(h, t)) -> false
+  leq(0, m) -> true
+  leq(s(n), 0) -> false
+  leq(s(n), s(m)) -> leq(n, m)
+  length(nil) -> 0
+  length(cons(h, t)) -> s(length(t))
+  app(nil, x) -> x
+  app(cons(h, t), x) -> cons(h, app(t, x))
+  map(pid, nil) -> nil
+  map(pid, cons(h, t)) -> app(f(pid, h), map(pid, t))
+)
+(VAR x1 x2)
+(CONDITION leq(x2,length(x1)) == true, empty(fstsplit(x2,x1)) == false, leq(x2,length(x1)) == false, empty(fstsplit(x2,app(map(self,nil),x1))) == false)
+(COMMENT submitted by: Naoki Nishida
+)

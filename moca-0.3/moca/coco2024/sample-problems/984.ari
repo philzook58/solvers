@@ -1,0 +1,12 @@
+; @author Yusuke Oi
+; @cops 1130
+; secret problem 2019
+; category: INF
+(format TRS :problem infeasibility)
+(fun + 2)
+(fun 0 0)
+(fun a 0)
+(fun s 1)
+(rule (+ 0 x) x)
+(rule (+ (s x) y) (s (+ x y)))
+(infeasible? (= (+ x a) 0))

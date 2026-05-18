@@ -1,0 +1,3 @@
+cnf(right_unit, axiom, ( f(X, e) = X ) ).
+cnf(right_inverse, axiom, ( f(X, i(X)) = e )).
+cnf(associativity, axiom, ( f(f(X, Y), Z) = f(X, f(Y, Z)) ) ).

@@ -1,0 +1,7 @@
+(format TRS)
+(fun ack 2)
+(fun s 1)
+(fun 0 0)
+(rule (ack 0 y) (s y))
+(rule (ack (s x) 0) (ack x (s 0)))
+(rule (ack (s x) (s y)) (ack x (ack (s x) y)))

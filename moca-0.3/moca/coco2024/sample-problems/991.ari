@@ -1,0 +1,12 @@
+; @author Sarah Winkler
+; @cops 1137
+; secret problem 2019
+; category: INF
+(format CTRS semi-equational :problem infeasibility)
+(fun a 0)
+(fun f 2)
+(fun unit 0)
+(rule (f x x) unit (= x a))
+(rule (f x unit) x)
+(rule (f (f x y) z) (f x (f y z)))
+(infeasible? (= a (f a a)))

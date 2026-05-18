@@ -1,0 +1,23 @@
+Building Z3 for StarExec.
+
+TODO: better to use Docker or something?
+
+0. Install cmake.
+1. Download Z3 4.8.17 source code (either of the last two in the assets list) from
+   https://github.com/Z3Prover/z3/releases/tag/z3-4.8.17 .
+2. Extract the archive, and
+
+```
+   $ cd z3-4.8.17
+   $ mkdir build
+   $ cd build
+   $ cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS:STRING='-static -Wl,--whole-archive -lrt -lpthread -Wl,--no-whole-archive'
+   $ make -j4 # compilation takes long time
+```
+
+3. Check if `z3` is produced and statically linked:
+
+```
+$ file z3
+z3: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, BuildID[sha1]=95991503c5806fda5744cbbbd78f8320cc126917, for GNU/Linux 3.2.0, not stripped
+```

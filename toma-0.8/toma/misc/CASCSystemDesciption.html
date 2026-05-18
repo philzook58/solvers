@@ -1,0 +1,36 @@
+
+<HR><!------------------------------------------------------------------------>
+<H2>Toma 0.7</H2>
+Teppei Saito<BR>
+Japan Advanced Institute of Science and Technology, Japan
+
+<H3>Architecture</H3>
+
+Toma is an automatic equational theorem prover based on a DISCOUNT loop [<A HREF="http://tptp.org/cgi-bin/SeeTPTP?Category=BibTeX&File=DKS97-JAR-18">DKS97</A>]
+implementing ordered completion [<A HREF="http://tptp.org/cgi-bin/SeeTPTP?Category=BibTeX&File=BDP89">BDP89</A>].
+In addition to LPO and KBO, the tool also implements non-standard term orders such as
+weighted path orders [<A HREF="http://tptp.org/cgi-bin/SeeTPTP?Category=BibTeX&File=YKS15">YKS15</A>]
+and monotonic semantic path orders [<A HREF="http://tptp.org/cgi-bin/SeeTPTP?Category=BibTeX&File=BFR00">BFR00</A>].
+
+<H3>Strategies</H3>
+
+For this competition, the tool tries two runs for a given problem:
+one with a fixed KBO and another with an LPO.
+Based on an idea from [<A HREF="http://tptp.org/cgi-bin/SeeTPTP?Category=BibTeX&File=WM18">WM18</A>],
+the precedence of the LPO is chosen in a way that minimizes the number of critical pairs between axioms,
+using the SMT solver Z3.
+
+<H3>Implementation</H3>
+
+For efficiency,
+Toma implements fingerprint indexing [<A HREF="http://tptp.org/cgi-bin/SeeTPTP?Category=BibTeX&File=Sch12">Sch12</A>],
+Waidmeister's AC heuristics [<A HREF="http://tptp.org/cgi-bin/SeeTPTP?Category=BibTeX&File=AHL03">AHL03</A>], and
+a connectedness testing [<A HREF="http://tptp.org/cgi-bin/SeeTPTP?Category=BibTeX&File=BD88">BD88</A>, <A HREF="http://tptp.org/cgi-bin/SeeTPTP?Category=BibTeX&File=Sma21">Sma21</A>].
+The source code is available at
+<A HREF="https://www.jaist.ac.jp/project/maxcomp/">https://www.jaist.ac.jp/project/maxcomp/</A>.
+
+<H3>Expected Competition Performance</H3>
+
+Toma would solve almost half as many problems as state-of-the-art solvers.
+
+<HR><!------------------------------------------------------------------------>

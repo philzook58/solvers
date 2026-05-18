@@ -70,3 +70,36 @@
 [submodule "prologsolvers"]
 	path = prologsolvers
 	url = git@github.com:philzook58/prologsolvers.git
+[submodule "chrpp"]
+	path = chrpp
+	url = https://gitlab.com/vynce/chrpp.git
+[submodule "metis"]
+	path = metis
+	url = https://github.com/gilith/metis.git
+[submodule "kbmag"]
+	path = kbmag
+	url = https://github.com/gap-packages/kbmag
+[submodule "Spin"]
+	path = Spin
+	url = https://github.com/nimble-code/Spin.git
+[submodule "htd"]
+	path = htd
+	url = https://github.com/mabseher/htd.git
+[submodule "kissat"]
+	path = kissat
+	url = https://github.com/arminbiere/kissat.git
+[submodule "msolve"]
+	path = msolve
+	url = https://github.com/algebraic-solving/msolve
+[submodule "gclc"]
+	path = gclc
+	url = https://github.com/janicicpredrag/gclc.git
+[submodule "rIC3"]
+	path = rIC3
+	url = https://github.com/gipsyh/rIC3.git
+[submodule "mkbtt"]
+	path = mkbtt
+	url = https://github.com/bytekid/mkbtt.git
+[submodule "smttotptp"]
+	path = smttotptp
+	url = https://bitbucket.org/peba123/smttotptp.git

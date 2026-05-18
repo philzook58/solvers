@@ -1,0 +1,19 @@
+(PROBLEM INFEASIBILITY)
+(COMMENT COPS 335)
+(CONDITIONTYPE ORIENTED)
+(VAR x y q r)
+(RULES
+ lt(x,0) -> false
+  lt(0,s(x)) -> true
+  lt(s(x),s(y)) -> lt(x,y)
+  m(0,s(y)) -> 0
+  m(x,0) -> x
+  m(s(x),s(y)) -> m(x,y)
+  div(0,s(x)) -> pair(0,0)
+  div(s(x),s(y)) -> pair(0,s(x))
+  div(s(x),s(y)) -> pair(s(q),r)
+)
+(VAR x4 x3 x2 x1)
+(CONDITION lt(x1,x2) == true, lt(x1,x2) == false, div(m(x1,x2),s(x2)) == pair(x3,x4))
+(COMMENT submitted by: Naoki Nishida
+)

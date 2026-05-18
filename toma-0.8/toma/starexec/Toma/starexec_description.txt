@@ -1,0 +1,1 @@
+Toma is an automatic theorem prover for first order equational systems.

@@ -1,0 +1,1 @@
+Moca 0.3 for CoCo 2024. The INF configuration runs solely Moca. The other configuration runs Moca in the certification mode for CeTA.
